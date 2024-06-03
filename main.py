@@ -1,24 +1,22 @@
 def roman_to_int():
-    roman_numerals_less = {
+    roman_numerals = {
         "I": 1,
         "X": 10,
         "C": 100,
-    }
-    roman_numerals_normal = {
         "V": 5,
         "D": 500,
         "M": 1000,
     }
-    number_organized = {}
+    number_organized = []
     sequence = input("Insert a Roman number to convert: ")
     sequence = sequence.upper()
     for letter in sequence:
-        # fix this line
-        if letter not in roman_numerals_less or not roman_numerals_normal:
+        if letter in roman_numerals:
+            # need to figure out how i will make this compares values
+            number_organized.append(letter)
+        else:
             print("Incorrect value, try again.")
             roman_to_int()
-        else:
-            print("correct")
 
 
 def int_to_roman():
@@ -32,8 +30,11 @@ def choose():
     option = input("Choose an option (1 or 2): ")
     if option == "1":
         roman_to_int()
-    else:
+    elif option == "2":
         int_to_roman()
+    else:
+        print("\ncommand invalid. Try it again.\n")
+        choose()
 
 
 choose()
