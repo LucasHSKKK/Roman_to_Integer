@@ -1,4 +1,4 @@
-def roman_to_int():
+def roman_to_int(roman):
     roman_numerals = {
         "I": 1,
         "X": 10,
@@ -7,29 +7,28 @@ def roman_to_int():
         "D": 500,
         "M": 1000,
     }
-    number_organized = []
-    sequence = input("Insert a Roman number to convert: ")
-    sequence = sequence.upper()
-    for letter in sequence:
+    roman = roman.upper()
+    for letter in roman:
         if letter in roman_numerals:
-            # need to figure out how i will make this compares values
-            number_organized.append(letter)
+            print("correct")
         else:
             print("Incorrect value, try again.")
-            roman_to_int()
+            choose()
+            break
 
 
-def int_to_roman():
+def int_to_roman(integer):
     print()
 
 
 def choose():
-    print(" ---------- Roman Numberals Conversion ----------")
+    print("\n ---------- Roman Numberals Conversion ----------")
     print(" > 1 - Convert an integer to a roman numerals,")
     print(" > 2 - Convert a roman numerals to an integer.")
     option = input("Choose an option (1 or 2): ")
     if option == "1":
-        roman_to_int()
+        sequence = input("Insert a Roman number to convert: ")
+        roman_to_int(sequence)
     elif option == "2":
         int_to_roman()
     else:
