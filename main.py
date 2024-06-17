@@ -1,20 +1,38 @@
 def roman_to_int(roman):
     roman_numerals = {
         "I": 1,
-        "X": 10,
-        "C": 100,
         "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
         "D": 500,
         "M": 1000,
     }
     roman = roman.upper()
+    roman_organize = []
+
     for letter in roman:
         if letter in roman_numerals:
-            print("correct")
+            roman_organize.append(letter)
         else:
-            print("Incorrect value, try again.")
+            print("\nIncorrect value, try again.")
             choose()
-            break
+
+    roman_organize.reverse()
+
+    result = 0
+    prev_value = 0
+
+    for letter in roman_organize:
+        current_value = roman_numerals[letter]
+
+        if current_value < prev_value:
+            result -= current_value
+        else:
+            result += current_value
+        prev_value = current_value
+
+    print(f"\nhere is your number: {result}")
 
 
 def int_to_roman(integer):
