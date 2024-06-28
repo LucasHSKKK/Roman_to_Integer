@@ -17,6 +17,7 @@ def roman_to_int(roman):
         else:
             print("\nIncorrect value, try again.")
             choose()
+            return
 
     roman_organize.reverse()
 
@@ -48,7 +49,8 @@ def choose():
         sequence = input("Insert a Roman number to convert: ")
         roman_to_int(sequence)
     elif option == "2":
-        int_to_roman()
+        sequence == input("insert a number to convert: ")
+        int_to_roman(sequence)
     else:
         print("\ncommand invalid. Try it again.\n")
         choose()
